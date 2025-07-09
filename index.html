@@ -135,7 +135,17 @@ footer {
       display: inline-block;
     }
     <style>
-  
+  <style>
+  /* Tu CSS anterior... */
+
+  .fotos-extra img {
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
 
   </style>
 </head>
@@ -158,7 +168,17 @@ footer {
     <p>Una botella práctica para acompañar las comidas en familia.</p>
     <p class="precio">Precio: $6.000</p>
   </div>
- <div class="producto">
+   <div class="producto">
+  <h1>Botella NEO</h1>
+  <div class="fotos-extra">
+    <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella vista 1">
+    <img src="img/Botella-neo-1.jpeg" alt="Botella vista 2">
+  </div>
+  <!-- Descripción y precio: van fuera del div .fotos-extra -->
+    <p>La Botella Neo reutilizable está hecha de vidrio resistente, con tapa de silicona y bambú. </p>
+    <p class="precio">Precio: $6.000</p>
+  </div>
+ <div class="prUna botoducto">
   <h1>Botella 600 </h1>
   <div class="fotos-extra">
     <img src="img/Imagen-Botella600_1.jpg" alt="Botella vista 1">
