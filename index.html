@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PSA - Purificadores de Agua</title>
   <style>
+    :root{
+      /* Cambiá la ruta si tu imagen está en otro lugar */
+      --bandera-url: url('img/bandera-argentina.jpg');
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,35 +19,43 @@
     header {
       background-color: #0077b6;
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     .logo {
-      font-size: 6rem;
+      font-size: clamp(3rem, 8vw, 6rem);
       font-weight: bold;
       text-transform: uppercase;
-      background: linear-gradient(to right, #6cb4ee, #ffffff, #6cb4ee);
+      /* Primero intenta con la bandera; si no carga, usa el degradé */
+      background:
+        var(--bandera-url) center / cover no-repeat,
+        linear-gradient(to right, #6cb4ee, #ffffff, #6cb4ee);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: transparent;
       display: inline-block;
       margin: 0;
+      line-height: 1.05;
     }
     .frase {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-top: 0.5rem;
+      opacity: 0.95;
     }
+
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .producto {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       padding: 1rem;
       text-align: center;
     }
@@ -52,38 +65,29 @@
       object-fit: contain;
       display: block;
       margin: 0 auto;
+      border-radius: 8px;
     }
     .fotos-extra img {
       max-height: 300px;
       object-fit: contain;
       display: block;
-      margin: 0 auto;
+      margin: 0.4rem auto 0;
     }
-    /* 🎨 Estilo para títulos */
+
+    /* 🎨 Títulos de producto */
     .producto h2 {
       font-size: 1.6rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.6rem 0;
       color: #023e8a;
       background: linear-gradient(to right, #caf0f8, #ade8f4);
       padding: 0.5rem;
-      border-radius: 8px;
+      border-radius: 10px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 0.7px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     }
-    /* 💰 Estilo para precios */
-    .precio {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #006400;
-      background: linear-gradient(to right, #d4edda, #c3e6cb);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    /* ✨ Estilo joven para descripciones */
+
+    /* ✨ Descripciones con look joven */
     .descripcion {
       font-family: "Segoe UI", Verdana, sans-serif;
       font-size: 1rem;
@@ -91,15 +95,39 @@
       margin: 0.8rem 0;
       line-height: 1.5;
     }
-    .descripcion strong {
-      color: #0077b6; /* azul para destacar */
+    .descripcion strong { color: #0077b6; }
+
+    /* 💰 Precio tipo etiqueta */
+    .precio {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #0a5f0a;
+      background: linear-gradient(to right, #d4edda, #c3e6cb);
+      padding: 0.45rem 0.9rem;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 0.6rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     }
+
+    /* Sección medios de pago */
+    .contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+    }
+    .contenedor h2 {
+      text-align: center;
+      color: #023e8a;
+    }
+
     footer {
       background-color: #023e8a;
       color: white;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
+    .vendedor a { color: #fff; }
   </style>
 </head>
 <body>
@@ -112,94 +140,94 @@
   <main>
     <section class="galeria">
 
-      <!-- PURIFICADORES -->
-      <div class="producto">
+      <!-- PURIFICADORES PRIMERO -->
+      <article class="producto">
         <h2>Senior4</h2>
         <div class="fotos-extra">
-          <img src="img/senio4trescolores.jpg" alt="Purificador Senior4 colores">
-          <img src="img/Senior4-Bianco_img_1.jpg" alt="Purificador Senior4 blanco">
+          <img src="img/senio4trescolores.jpg" alt="Purificador Senior4 en tres colores" loading="lazy">
+          <img src="img/Senior4-Bianco_img_1.jpg" alt="Purificador Senior4 color blanco" loading="lazy">
         </div>
         <p class="descripcion">Un <strong>purificador moderno</strong> pensado para tu estilo de vida.</p>
         <p class="precio">Precio: $717.000</p>
-      </div>
+      </article>
 
-      <div class="producto">
+      <article class="producto">
         <h2>S1000II</h2>
         <div class="fotos-extra">
-          <img src="img/S1000-2_img_3.jpg" alt="Purificador S1000II vista 1">
-          <img src="img/S1000-2Nero_img_4.jpg" alt="Purificador S1000II negro">
+          <img src="img/S1000-2_img_3.jpg" alt="Purificador S1000II vista frontal" loading="lazy">
+          <img src="img/S1000-2Nero_img_4.jpg" alt="Purificador S1000II color negro" loading="lazy">
         </div>
         <p class="descripcion">Combina <strong>tecnología</strong>, estética y gran poder de purificación.</p>
         <p class="precio">Precio: $846.000</p>
-      </div>
+      </article>
 
-      <div class="producto">
+      <article class="producto">
         <h2>Senior</h2>
         <div class="fotos-extra">
-          <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior vista 1">
-          <img src="img/Senior_img_4_0.jpg" alt="Purificador Senior vista 2">
+          <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior vista 1" loading="lazy">
+          <img src="img/Senior_img_4_0.jpg" alt="Purificador Senior vista 2" loading="lazy">
         </div>
         <p class="descripcion">Tu aliado ideal en la cocina: <strong>simple</strong>, práctico y seguro.</p>
         <p class="precio">Precio: $590.000</p>
-      </div>
+      </article>
 
-      <div class="producto">
+      <article class="producto">
         <h2>Ducha</h2>
         <div class="fotos-extra">
-          <img src="img/Imagen-Ducha_2.jpg" alt="Ducha purificadora vista 1">
-          <img src="img/Imagen-Ducha_3.jpg" alt="Ducha purificadora vista 2">
+          <img src="img/Imagen-Ducha_2.jpg" alt="Ducha purificadora vista 1" loading="lazy">
+          <img src="img/Imagen-Ducha_3.jpg" alt="Ducha purificadora vista 2" loading="lazy">
         </div>
         <p class="descripcion">Un baño relajante, libre de <strong>cloro</strong> y agua dura. Ideal para cuidar tu piel y cabello.</p>
         <p class="precio">Precio: $233.000</p>
-      </div>
+      </article>
 
       <!-- BOTELLAS -->
-      <div class="producto">
+      <article class="producto">
         <h2>Botella de 1L</h2>
         <div class="fotos-extra">
-          <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro vista 1">
-          <img src="img/BotelladeunL2.jpg" alt="Botella de 1 litro vista 2">
+          <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro vista 1" loading="lazy">
+          <img src="img/BotelladeunL2.jpg" alt="Botella de 1 litro vista 2" loading="lazy">
         </div>
         <p class="descripcion">Clásica y práctica, perfecta para <strong>compartir</strong> en familia.</p>
         <p class="precio">Precio: $9.400</p>
-      </div>
+      </article>
 
-      <div class="producto">
+      <article class="producto">
         <h2>Botella NEO</h2>
         <div class="fotos-extra">
-          <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo vista 1">
-          <img src="img/Botella-neo-1.jpeg" alt="Botella Neo vista 2">
+          <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo vista 1" loading="lazy">
+          <img src="img/Botella-neo-1.jpeg" alt="Botella Neo vista 2" loading="lazy">
         </div>
         <p class="descripcion">De vidrio resistente, con tapa de <strong>silicona</strong> y bambú. Eco-friendly y moderna.</p>
         <p class="precio">Precio: $25.000 p/u</p>
-      </div>
+      </article>
 
-      <div class="producto">
+      <article class="producto">
         <h2>Botella 600</h2>
         <div class="fotos-extra">
-          <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600 vista 1">
-          <img src="img/Imagen-Botella600_7.jpg" alt="Botella 600 vista 2">
+          <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600 vista 1" loading="lazy">
+          <img src="img/Imagen-Botella600_7.jpg" alt="Botella 600 vista 2" loading="lazy">
         </div>
         <p class="descripcion">Liviana, compacta y lista para <strong>acompañarte</strong> a todos lados.</p>
         <p class="precio">Precio: $14.500 p/u</p>
-      </div>
+      </article>
 
       <!-- PROMO -->
-      <div class="producto">
+      <article class="producto">
         <h2>Promoción de tarjetas</h2>
         <div class="fotos-extra">
-          <img src="img/promociones de tarjeta.jpeg" alt="Promoción de tarjetas">
+          <img src="img/promociones de tarjeta.jpeg" alt="Promociones con tarjetas" loading="lazy">
         </div>
         <p class="descripcion"><strong>Aprovechá</strong> nuestras promos exclusivas con tarjetas.</p>
-        <p><strong>Consulte por su presupuesto - Precios hasta el 31/7</strong></p>
-      </div>
+        <p><strong>Consultá por tu presupuesto</strong></p>
+      </article>
 
     </section>
 
-    <section style="padding: 2rem;">
+    <section class="contenedor">
       <h2>Medios de Pago</h2>
-      <p>Aceptamos los siguientes métodos de pago:</p>
-      <ul>
+      <p style="text-align:center;">Aceptamos los siguientes métodos de pago:</p>
+      <ul style="max-width:600px;margin:0 auto 2rem;line-height:1.8;">
         <li>Transferencia bancaria</li>
         <li>Mercado Pago</li>
         <li>Tarjetas de crédito y débito</li>
@@ -211,10 +239,10 @@
   <footer>
     <section class="vendedor">
       <p>Consultas y pedidos:</p>
-      <h2>Contacto del Vendedor</h2>
+      <h2 style="margin:0 0 0.5rem;">Contacto del Vendedor</h2>
       <p><strong>Martín Silva</strong></p>
       <p>Distribuidor Nº05-21000032</p>
-      <p>Teléfono: <a href="https://wa.me/5492964548129" target="_blank">+54 9 2964 548129</a></p>
+      <p>Teléfono: <a href="https://wa.me/5492964548129" target="_blank" rel="noopener">+54 9 2964 548129</a></p>
       <p>Email: <a href="mailto:aurelianobuendia37@outlook.es">aurelianobuendia37@outlook.es</a></p>
       <p>Ubicación: Río Grande, Tierra del Fuego</p>
     </section>
