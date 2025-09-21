@@ -25,15 +25,56 @@
       font-size: 1.2rem;
       margin-top: 0.5rem;
     }
-    .promo {
-      background: #ffb703;
-      color: #000;
-      padding: 0.5rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      border-radius: 5px;
-    }
     .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .producto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .fotos-extra img {
+      max-height: 300px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .precio {
+      font-weight: bold;
+      color: #0077b6;
+    }
+    footer {
+      background-color: #023e8a;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .contacto a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PSA</h1>
+    <p class="frase">Purificadores de agua para el hogar y la oficina</p>
+  </header>
 
   <main>
     <section class="galeria">
@@ -42,8 +83,105 @@
         <h2>Botella de 1L</h2>
         <div class="fotos-extra">
           <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro vista 1">
+          <img src="img/BotelladeunL2.jpg" alt="Botella de 1 litro vista 2">
+        </div>
+        <p>Una botella práctica para acompañar las comidas en familia.</p>
+        <p class="precio">Precio: $9.400</p>
+      </div>
 
+      <div class="producto">
+        <h2>Botella NEO</h2>
+        <div class="fotos-extra">
+          <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo vista 1">
+          <img src="img/Botella-neo-1.jpeg" alt="Botella Neo vista 2">
+        </div>
+        <p>La Botella Neo reutilizable está hecha de vidrio resistente, con tapa de silicona y bambú.</p>
+        <p class="precio">Precio: $25.000 p/u</p>
+      </div>
 
+      <div class="producto">
+        <h2>Botella 600</h2>
+        <div class="fotos-extra">
+          <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600 vista 1">
+          <img src="img/Imagen-Botella600_7.jpg" alt="Botella 600 vista 2">
+        </div>
+        <p>Una botella liviana y práctica pensada para acompañarte a todos lados.</p>
+        <p class="precio">Precio: $14.500 p/u</p>
+      </div>
 
+      <div class="producto">
+        <h2>Senior4</h2>
+        <div class="fotos-extra">
+          <img src="img/senio4trescolores.jpg" alt="Purificador Senior4 colores">
+          <img src="img/Senior4-Bianco_img_1.jpg" alt="Purificador Senior4 blanco">
+        </div>
+        <p>Un purificador pensado para tu estilo de vida.</p>
+        <p class="precio">Precio: $717.000</p>
+      </div>
 
+      <div class="producto">
+        <h2>S1000II</h2>
+        <div class="fotos-extra">
+          <img src="img/S1000-2_img_3.jpg" alt="Purificador S1000II vista 1">
+          <img src="img/S1000-2Nero_img_4.jpg" alt="Purificador S1000II negro">
+        </div>
+        <p>Combina tecnología, estética y mayor poder de purificación.</p>
+        <p class="precio">Precio: $846.000</p>
+      </div>
 
+      <div class="producto">
+        <h2>Senior</h2>
+        <div class="fotos-extra">
+          <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior vista 1">
+          <img src="img/Senior_img_4_0.jpg" alt="Purificador Senior vista 2">
+        </div>
+        <p>Tu aliado en la cocina.</p>
+        <p class="precio">Precio: $590.000</p>
+      </div>
+
+      <div class="producto">
+        <h2>Ducha</h2>
+        <div class="fotos-extra">
+          <img src="img/Imagen-Ducha_2.jpg" alt="Ducha purificadora vista 1">
+          <img src="img/Imagen-Ducha_3.jpg" alt="Ducha purificadora vista 2">
+        </div>
+        <p>Disfrutá de un baño relajante, libre de los peligros del cloro y del agua dura y turbia.</p>
+        <p class="precio">Precio: $233.000</p>
+      </div>
+
+      <div class="producto">
+        <h2>Promoción de tarjetas</h2>
+        <div class="fotos-extra">
+          <img src="img/promociones de tarjeta.jpeg" alt="Promoción de tarjetas">
+        </div>
+        <p><strong>Consulte por su presupuesto - Precios hasta el 31/7</strong></p>
+      </div>
+
+    </section>
+
+    <section style="padding: 2rem;">
+      <h2>Medios de Pago</h2>
+      <p>Aceptamos los siguientes métodos de pago:</p>
+      <ul>
+        <li>Transferencia bancaria</li>
+        <li>Mercado Pago</li>
+        <li>Tarjetas de crédito y débito</li>
+        <li>Efectivo (solo en Río Grande)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <section class="vendedor">
+      <p>Consultas y pedidos:</p>
+      <h2>Contacto del Vendedor</h2>
+      <p><strong>Martín Silva</strong></p>
+      <p>Distribuidor Nº05-21000032</p>
+      <p>Teléfono: <a href="https://wa.me/5492964548129" target="_blank">+54 9 2964 548129</a></p>
+      <p>Email: <a href="mailto:aurelianobuendia37@outlook.es">aurelianobuendia37@outlook.es</a></p>
+      <p>Ubicación: Río Grande, Tierra del Fuego</p>
+    </section>
+  </footer>
+
+</body>
+</html>
