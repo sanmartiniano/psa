@@ -121,6 +121,21 @@
       padding: 2rem 1rem;
     }
     .vendedor a { color: #fff; }
+
+    /* ✨ Animación de nombre */
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .nombre-animado {
+      font-weight: bold;
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, #ffdd00, #ff595e, #4facfe, #00f2fe);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+    }
   </style>
 </head>
 <body>
@@ -212,7 +227,7 @@
     <section class="vendedor">
       <p>Consultas y pedidos:</p>
       <h2>Contacto del Vendedor</h2>
-      <p><strong>Martín Silva</strong></p>
+      <p class="nombre-animado">Martín Silva</p>
       <p>Distribuidor Nº05-21000032</p>
       <p>Teléfono: <a href="https://wa.me/5492964548129" target="_blank">+54 9 2964 548129</a></p>
       <p>Email: <a href="mailto:aurelianobuendia37@outlook.es">aurelianobuendia37@outlook.es</a></p>
