@@ -18,12 +18,15 @@
       text-align: center;
     }
     .logo {
-      font-size: 6rem; /* letras bien grandes */
+      font-size: 6rem;
       font-weight: bold;
       text-transform: uppercase;
-      background: linear-gradient(to right, #6cb4ee, #ffffff, #6cb4ee); 
+      background: linear-gradient(to right, #6cb4ee, #ffffff, #6cb4ee);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; 
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
       margin: 0;
     }
     .frase {
@@ -66,12 +69,6 @@
       text-align: center;
       padding: 2rem;
     }
-    .contacto a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      display: inline-block;
-    }
   </style>
 </head>
 <body>
@@ -83,37 +80,8 @@
 
   <main>
     <section class="galeria">
-      
-      <div class="producto">
-        <h2>Botella de 1L</h2>
-        <div class="fotos-extra">
-          <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro vista 1">
-          <img src="img/BotelladeunL2.jpg" alt="Botella de 1 litro vista 2">
-        </div>
-        <p>Una botella práctica para acompañar las comidas en familia.</p>
-        <p class="precio">Precio: $9.400</p>
-      </div>
 
-      <div class="producto">
-        <h2>Botella NEO</h2>
-        <div class="fotos-extra">
-          <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo vista 1">
-          <img src="img/Botella-neo-1.jpeg" alt="Botella Neo vista 2">
-        </div>
-        <p>La Botella Neo reutilizable está hecha de vidrio resistente, con tapa de silicona y bambú.</p>
-        <p class="precio">Precio: $25.000 p/u</p>
-      </div>
-
-      <div class="producto">
-        <h2>Botella 600</h2>
-        <div class="fotos-extra">
-          <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600 vista 1">
-          <img src="img/Imagen-Botella600_7.jpg" alt="Botella 600 vista 2">
-        </div>
-        <p>Una botella liviana y práctica pensada para acompañarte a todos lados.</p>
-        <p class="precio">Precio: $14.500 p/u</p>
-      </div>
-
+      <!-- PURIFICADORES PRIMERO -->
       <div class="producto">
         <h2>Senior4</h2>
         <div class="fotos-extra">
@@ -154,6 +122,37 @@
         <p class="precio">Precio: $233.000</p>
       </div>
 
+      <!-- BOTELLAS Y OTROS DESPUÉS -->
+      <div class="producto">
+        <h2>Botella de 1L</h2>
+        <div class="fotos-extra">
+          <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro vista 1">
+          <img src="img/BotelladeunL2.jpg" alt="Botella de 1 litro vista 2">
+        </div>
+        <p>Una botella práctica para acompañar las comidas en familia.</p>
+        <p class="precio">Precio: $9.400</p>
+      </div>
+
+      <div class="producto">
+        <h2>Botella NEO</h2>
+        <div class="fotos-extra">
+          <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo vista 1">
+          <img src="img/Botella-neo-1.jpeg" alt="Botella Neo vista 2">
+        </div>
+        <p>La Botella Neo reutilizable está hecha de vidrio resistente, con tapa de silicona y bambú.</p>
+        <p class="precio">Precio: $25.000 p/u</p>
+      </div>
+
+      <div class="producto">
+        <h2>Botella 600</h2>
+        <div class="fotos-extra">
+          <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600 vista 1">
+          <img src="img/Imagen-Botella600_7.jpg" alt="Botella 600 vista 2">
+        </div>
+        <p>Una botella liviana y práctica pensada para acompañarte a todos lados.</p>
+        <p class="precio">Precio: $14.500 p/u</p>
+      </div>
+
       <div class="producto">
         <h2>Promoción de tarjetas</h2>
         <div class="fotos-extra">
@@ -190,3 +189,4 @@
 
 </body>
 </html>
+
