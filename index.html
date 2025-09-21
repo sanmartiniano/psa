@@ -77,17 +77,33 @@
       display: block;
       margin: 0.4rem auto 0;
     }
+
+    /* 🎨 Animaciones para títulos */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(15px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shineText {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
     .producto h2 {
       font-size: 1.6rem;
       margin: 0 0 0.6rem 0;
-      color: #023e8a;
-      background: linear-gradient(to right, #caf0f8, #ade8f4);
+      background: linear-gradient(to right, #caf0f8, #ade8f4, #caf0f8);
+      background-size: 200% auto;
       padding: 0.5rem;
       border-radius: 10px;
       text-transform: uppercase;
       letter-spacing: 0.7px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      /* Animaciones */
+      animation: fadeInUp 0.8s ease both, shineText 3s linear infinite;
     }
+
     .descripcion {
       font-family: "Segoe UI", Verdana, sans-serif;
       font-size: 1rem;
