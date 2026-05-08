@@ -4,23 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PSA - Purificadores de Agua</title>
+
   <style>
     :root{
       --bandera-url: url('img/bandera-argentina.jpg');
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Century Gothic", Century, sans-serif;
       margin: 0;
       background-color: #f5f5f5;
       color: #222;
     }
+
     header {
       background-color: #0077b6;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
     }
+
     .logo {
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: bold;
@@ -36,23 +43,7 @@
       margin: 0;
       line-height: 1.05;
     }
-    /* 🏷️ Cartel de promoción */
-    .promo-banner {
-      background: #ff595e;
-      color: white;
-      font-size: 1.4rem;
-      padding: 0.7rem 1.2rem;
-      margin: 1rem auto 0;
-      border-radius: 10px;
-      display: inline-block;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      animation: flicker 1s infinite alternate;
-    }
-    @keyframes flicker {
-      0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 20px #ff4500; }
-      100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff6347, 0 0 40px #ff4500; }
-    }
+
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -61,6 +52,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .producto {
       background: white;
       border-radius: 14px;
@@ -69,7 +61,11 @@
       text-align: center;
       transition: transform 0.2s ease;
     }
-    .producto:hover { transform: translateY(-5px); }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
     .producto img {
       max-width: 100%;
       max-height: 400px;
@@ -78,12 +74,14 @@
       margin: 0 auto;
       border-radius: 10px;
     }
+
     .fotos-extra img {
       max-height: 300px;
       object-fit: contain;
       display: block;
       margin: 0.4rem auto 0;
     }
+
     .producto h2 {
       font-family: "Century Gothic", Century, sans-serif;
       font-size: 1.7rem;
@@ -98,14 +96,29 @@
       -webkit-text-fill-color: transparent;
       animation: fadeInUp 0.8s ease both, shineText 4s linear infinite;
     }
+
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(15px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes shineText {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
     }
+
     .descripcion {
       font-size: 1rem;
       font-weight: 500;
@@ -113,14 +126,18 @@
       margin: 0.8rem 0;
       line-height: 1.6;
     }
-    .descripcion strong { color: #0077b6; }
-    /* 💰 Precios */
+
+    .descripcion strong {
+      color: #0077b6;
+    }
+
     .precio-original {
       font-size: 1rem;
       color: #888;
       text-decoration: line-through;
       margin: 0.3rem 0;
     }
+
     .precio-descuento {
       font-size: 1.4rem;
       font-weight: bold;
@@ -132,13 +149,18 @@
       margin-top: 0.4rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     }
+
     footer {
       background-color: #023e8a;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
-    .vendedor a { color: #fff; }
+
+    .vendedor a {
+      color: #fff;
+    }
+
     .nombre-animado {
       font-family: "Century Gothic", Century, sans-serif;
       font-weight: bold;
@@ -149,43 +171,87 @@
       -webkit-text-fill-color: transparent;
       animation: shine 3s linear infinite;
     }
+
     @keyframes shine {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 200% 50%;
+      }
     }
-    /* 📸 Imagen promo clic ampliado */
-    .promo-img { cursor: pointer; transition: transform 0.3s ease; }
-    .promo-img:hover { transform: scale(1.05); }
+
+    .promo-img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .promo-img:hover {
+      transform: scale(1.05);
+    }
+
     .modal {
-      display: none; position: fixed; z-index: 1000; padding-top: 60px;
-      left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
       background-color: rgba(0,0,0,0.9);
     }
+
     .modal-content {
-      margin: auto; display: block; max-width: 80%;
+      margin: auto;
+      display: block;
+      max-width: 80%;
     }
-    .modal-content, #caption { animation: zoom 0.6s; }
-    @keyframes zoom { from {transform: scale(0)} to {transform: scale(1)} }
+
+    .modal-content,
+    #caption {
+      animation: zoom 0.6s;
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
     .close {
-      position: absolute; top: 20px; right: 35px; color: #fff;
-      font-size: 40px; font-weight: bold; cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1 class="logo">PSA</h1>
-    <p class="promo-banner">🔥 5 % de descuento en purificadores (21 al 23 de septiembre) 🔥</p>
   </header>
 
   <main>
     <section class="galeria">
-      <!-- PURIFICADORES -->
+
       <article class="producto">
         <h2>Senior4</h2>
         <img src="img/senio4trescolores.jpg" alt="Purificador Senior4 colores">
-        <p class="descripcion">Un <strong>purificador moderno</strong> pensado para tu estilo de vida.</p>
+        <p class="descripcion">
+          Un <strong>purificador moderno</strong> pensado para tu estilo de vida.
+        </p>
         <p class="precio-original">$853.000</p>
         <p class="precio-descuento">$767.700</p>
       </article>
@@ -193,7 +259,9 @@
       <article class="producto">
         <h2>S1000II</h2>
         <img src="img/S1000-2_img_3.jpg" alt="Purificador S1000II">
-        <p class="descripcion">Combina <strong>tecnología</strong>, estética y gran poder de purificación.</p>
+        <p class="descripcion">
+          Combina <strong>tecnología</strong>, estética y gran poder de purificación.
+        </p>
         <p class="precio-original">$1.008.000</p>
         <p class="precio-descuento">$907.000</p>
       </article>
@@ -201,72 +269,110 @@
       <article class="producto">
         <h2>Senior</h2>
         <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior 3 Plateado">
-        <p class="descripcion">Tu aliado ideal en la cocina: <strong>simple</strong>, práctico y seguro.</p>
+        <p class="descripcion">
+          Tu aliado ideal en la cocina:
+          <strong>simple</strong>, práctico y seguro.
+        </p>
         <p class="precio-original">$753.000</p>
         <p class="precio-descuento">$676.000</p>
       </article>
 
       <article class="producto">
-        <h2>Senior</h2>
-        <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior 3 Black">
-        <p class="descripcion">Tu aliado ideal en la cocina: <strong>simple</strong>, práctico y seguro.</p>
+        <h2>Senior Black</h2>
+        <img src="img/Senior_img_3_0.jpg" alt="Purificador Senior Black">
+        <p class="descripcion">
+          Elegancia y pureza para tu hogar.
+        </p>
         <p class="precio-original">$753.000</p>
-        <p class="precio-descuento">">$676.000</p>
+        <p class="precio-descuento">$676.000</p>
       </article>
 
       <article class="producto">
         <h2>Ducha</h2>
         <img src="img/Imagen-Ducha_2.jpg" alt="Ducha purificadora">
-        <p class="descripcion">Un baño relajante, libre de <strong>cloro</strong> y agua dura.</p>
+        <p class="descripcion">
+          Un baño relajante, libre de
+          <strong>cloro</strong> y agua dura.
+        </p>
         <p class="precio-original">$277.000</p>
         <p class="precio-descuento">$249.000</p>
       </article>
 
-      <!-- BOTELLAS (solo precio normal) -->
       <article class="producto">
         <h2>Botella de 1L</h2>
         <img src="img/Botelladeunlitro.jpg" alt="Botella de 1 litro">
-        <p class="descripcion">Clásica y práctica, perfecta para <strong>compartir</strong> en familia.</p>
+        <p class="descripcion">
+          Clásica y práctica, perfecta para
+          <strong>compartir</strong> en familia.
+        </p>
         <p class="precio-descuento">$8.000</p>
       </article>
 
       <article class="producto">
         <h2>Botella NEO</h2>
         <img src="img/PSA_BotellaNEo_Ficha03b_15.jpg" alt="Botella Neo">
-        <p class="descripcion">De vidrio resistente, con tapa de <strong>silicona</strong> y bambú.</p>
+        <p class="descripcion">
+          De vidrio resistente, con tapa de
+          <strong>silicona</strong> y bambú.
+        </p>
         <p class="precio-descuento">$30.000</p>
       </article>
 
       <article class="producto">
         <h2>Botella 600</h2>
         <img src="img/Imagen-Botella600_1.jpg" alt="Botella 600">
-        <p class="descripcion">Liviana, compacta y lista para <strong>acompañarte</strong> a todos lados.</p>
+        <p class="descripcion">
+          Liviana, compacta y lista para
+          <strong>acompañarte</strong> a todos lados.
+        </p>
         <p class="precio-descuento">$17.000</p>
       </article>
 
-      <!-- PROMOCIÓN DE TARJETAS -->
       <article class="producto">
         <h2>Promoción de Tarjetas</h2>
-        <img src="img/promociones de tarjeta.jpg" alt="Promoción de tarjetas" class="promo-img" onclick="openModal(this)">
+        <img src="img/promociones de tarjeta.jpg"
+             alt="Promoción de tarjetas"
+             class="promo-img"
+             onclick="openModal(this)">
       </article>
+
     </section>
   </main>
 
   <footer>
     <section class="vendedor">
       <p>Consultas y pedidos:</p>
+
       <h2>Contacto del Vendedor</h2>
+
       <p class="nombre-animado">Martín Silva</p>
+
       <p>Distribuidor Nº05-21000032</p>
-      <p>Teléfono: <a href="https://wa.me/5492964548129" target="_blank">+54 9 2964 548129</a></p>
-      <p>Email: <a href="mailto:aurelianobuendia37@outlook.es">aurelianobuendia37@outlook.es</a></p>
+
+      <p>
+        Teléfono:
+        <a href="https://wa.me/5492964548129" target="_blank">
+          +54 9 2964 548129
+        </a>
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:aurelianobuendia37@outlook.es">
+          aurelianobuendia37@outlook.es
+        </a>
+      </p>
+
       <p>Ubicación: Río Grande, Tierra del Fuego</p>
     </section>
   </footer>
 
-  <!-- Modal para imagen -->
   <div id="imgModal" class="modal">
-    <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <span class="close"
+      onclick="document.getElementById('imgModal').style.display='none'">
+      &times;
+    </span>
+
     <img class="modal-content" id="modalImg">
   </div>
 
@@ -274,6 +380,7 @@
     function openModal(img) {
       var modal = document.getElementById("imgModal");
       var modalImg = document.getElementById("modalImg");
+
       modal.style.display = "block";
       modalImg.src = img.src;
     }
