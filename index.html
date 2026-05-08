@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -207,7 +208,7 @@
       top:0;
       width:100%;
       height:100%;
-      background-color:rgba(0,0,0,0.9);
+      background-color:rgba(0,0,0,0.92);
       justify-content:center;
       align-items:center;
       padding:20px;
@@ -220,6 +221,16 @@
       animation:zoom 0.3s ease;
     }
 
+    .close{
+      position:absolute;
+      top:20px;
+      right:35px;
+      color:#fff;
+      font-size:45px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
     @keyframes zoom{
       from{
         transform:scale(0.7);
@@ -230,16 +241,6 @@
         transform:scale(1);
         opacity:1;
       }
-    }
-
-    .close{
-      position:absolute;
-      top:20px;
-      right:35px;
-      color:#fff;
-      font-size:45px;
-      font-weight:bold;
-      cursor:pointer;
     }
 
   </style>
@@ -305,6 +306,158 @@
 
   </article>
 
+  <article class="producto">
+
+    <h2>Senior 3 Plateado</h2>
+
+    <img
+    src="img/psa senior 3 plata.jpg"
+    alt="Purificador Senior 3 Plateado"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      Tu aliado ideal en la cocina:
+      <strong>simple</strong>,
+      práctico y seguro.
+    </p>
+
+    <p class="precio-original">
+      Precio Lista:
+      <span>$700.000</span>
+    </p>
+
+    <p class="precio-descuento">
+      Precio Canje: $600.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Senior 3 Black</h2>
+
+    <img
+    src="img/psa senior 3 black.jpg"
+    alt="Purificador Senior Black"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      Elegancia y pureza para tu hogar.
+    </p>
+
+    <p class="precio-original">
+      Precio Lista:
+      <span>$753.000</span>
+    </p>
+
+    <p class="precio-descuento">
+      Precio Canje: $676.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Ducha</h2>
+
+    <img
+    src="img/Imagen-Ducha_2.jpg"
+    alt="Ducha purificadora"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      Un baño relajante,
+      libre de <strong>cloro</strong>
+      y agua dura.
+    </p>
+
+    <p class="precio-original">
+      Precio Lista:
+      <span>$277.000</span>
+    </p>
+
+    <p class="precio-descuento">
+      Precio Canje: $249.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Botella de 1L</h2>
+
+    <img
+    src="img/Botelladeunlitro.jpg"
+    alt="Botella de 1 litro"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      Clásica y práctica,
+      perfecta para
+      <strong>compartir</strong>
+      en familia.
+    </p>
+
+    <p class="precio-descuento">
+      Precio: $8.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Botella NEO</h2>
+
+    <img
+    src="img/PSA_BotellaNEo_Ficha03b_15.jpg"
+    alt="Botella Neo"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      De vidrio resistente,
+      con tapa de
+      <strong>silicona</strong>
+      y bambú.
+    </p>
+
+    <p class="precio-descuento">
+      Precio: $30.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Botella 600</h2>
+
+    <img
+    src="img/Imagen-Botella600_1.jpg"
+    alt="Botella 600"
+    onclick="openModal(this)">
+
+    <p class="descripcion">
+      Liviana, compacta y lista
+      para <strong>acompañarte</strong>
+      a todos lados.
+    </p>
+
+    <p class="precio-descuento">
+      Precio: $17.000
+    </p>
+
+  </article>
+
+  <article class="producto">
+
+    <h2>Promoción de Tarjetas</h2>
+
+    <img
+    src="img/promociones de tarjeta.jpg"
+    alt="Promoción de tarjetas"
+    onclick="openModal(this)">
+
+  </article>
+
 </section>
 
 </main>
@@ -334,18 +487,35 @@
     </a>
   </p>
 
+  <p>
+    Email:
+    <a
+    href="mailto:aurelianobuendia37@outlook.es">
+    aurelianobuendia37@outlook.es
+    </a>
+  </p>
+
+  <p>
+    Ubicación:
+    Río Grande,
+    Tierra del Fuego
+  </p>
+
 </section>
 
 </footer>
 
 <div id="imgModal" class="modal">
 
-  <span class="close"
+  <span
+  class="close"
   onclick="closeModal()">
   &times;
   </span>
 
-  <img class="modal-content" id="modalImg">
+  <img
+  class="modal-content"
+  id="modalImg">
 
 </div>
 
